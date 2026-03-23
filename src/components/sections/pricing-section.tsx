@@ -3,13 +3,14 @@
 import { Card, CardContent, CardHeader, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Check, Sparkles } from 'lucide-react'
+import { Check, Sparkles, Clock, Shield, Users } from 'lucide-react'
 
 const packages = [
   {
     name: 'Basis-Website',
     price: '150',
-    description: 'Perfekt für den professionellen Auftritt',
+    description: 'Perfekt für den Start – ohne technisches Wissen',
+    idealFor: 'Handwerker, lokale Geschäfte, Freiberufler',
     features: [
       'Moderne, responsive Website',
       'Bis zu 5 Seiten',
@@ -24,7 +25,8 @@ const packages = [
   {
     name: 'Mit SEO-Optimierung',
     price: '199',
-    description: 'Unser beliebtestes Paket',
+    description: 'Ihr externes Marketing-Team',
+    idealFor: 'KMU, die mehr Kunden gewinnen wollen',
     features: [
       'Alles aus Basis-Paket',
       'Vollständige SEO-Optimierung',
@@ -40,7 +42,8 @@ const packages = [
   {
     name: 'Premium mit Shop',
     price: '279',
-    description: 'Für maximale Online-Präsenz',
+    description: 'Komplette E-Commerce-Lösung',
+    idealFor: 'Produkthandel, Online-Shops',
     features: [
       'Alles aus SEO-Paket',
       'Vollständiger Online-Shop',
@@ -53,6 +56,12 @@ const packages = [
     cta: 'Jetzt buchen',
     stripeUrl: 'https://buy.stripe.com/3cI28qfqdbp8ciz5DSgMw0m',
   },
+]
+
+const benefits = [
+  { icon: <Clock className="h-5 w-5" />, title: 'Keine Zeit?', text: 'Wir übernehmen alles' },
+  { icon: <Shield className="h-5 w-5" />, title: 'Feste Preise', text: 'Keine versteckten Kosten' },
+  { icon: <Users className="h-5 w-5" />, title: 'Persönlich', text: 'Ihr fester Ansprechpartner' },
 ]
 
 export function PricingSection() {
@@ -68,10 +77,23 @@ export function PricingSection() {
             Wählen Sie Ihr{' '}
             <span className="text-gradient">passendes Paket</span> 🌊
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Alle Pakete sind monatlich kündbar und ohne versteckte Kosten.
-            Persönliche Beratung inklusive!
+          <p className="text-lg text-muted-foreground mb-8">
+            Speziell für Schweizer Kleinunternehmen: Keine Agentur-Preise, keine versteckten Kosten, 
+            keine langen Verträge. Monatlich kündbar!
           </p>
+
+          {/* Benefits */}
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-center gap-3 bg-muted rounded-full px-5 py-2">
+                <span className="text-primary">{benefit.icon}</span>
+                <div className="text-left">
+                  <span className="text-sm font-medium text-foreground">{benefit.title}</span>
+                  <span className="text-sm text-muted-foreground ml-1">– {benefit.text}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Pricing Cards */}
@@ -100,8 +122,11 @@ export function PricingSection() {
                 <h3 className="text-2xl font-bold text-foreground mb-2">
                   {pkg.name}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm mb-2">
                   {pkg.description}
+                </p>
+                <p className="text-xs text-primary font-medium">
+                  Ideal für: {pkg.idealFor}
                 </p>
                 <div className="mt-4">
                   <span className="text-4xl lg:text-5xl font-bold text-foreground">

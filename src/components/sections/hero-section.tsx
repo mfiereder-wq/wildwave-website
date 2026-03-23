@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles, Users, Clock, Shield } from 'lucide-react'
 
 export function HeroSection() {
   const scrollToSection = (href: string) => {
@@ -48,14 +48,14 @@ export function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6 border border-white/20">
             <Sparkles className="h-4 w-4 text-wave-gold" />
-            <span className="text-sm text-white/90">Webdesign & Marketing Agentur Zürich</span>
+            <span className="text-sm text-white/90">Für Kleinunternehmen, Handwerker & lokale Geschäfte</span>
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
-            Digitale Wellen für{' '}
+            Websites & Marketing für{' '}
             <span className="relative inline-block">
-              Ihre Marke
+              Schweizer KMU
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
                 <path
                   d="M2 10C50 2 100 2 150 6C180 8 198 6 198 6"
@@ -69,10 +69,29 @@ export function HeroSection() {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-white/80 mb-8 max-w-2xl leading-relaxed">
-            Wir gestalten Ihre Online-Präsenz – kreativ, strategisch, erfolgreich. 
-            Von erstklassigem Webdesign bis zu effektivem Marketing.
+          <p className="text-lg sm:text-xl lg:text-2xl text-white/80 mb-6 max-w-2xl leading-relaxed">
+            Sie haben kein Marketing-Team? <span className="text-white font-semibold">Wir sind Ihr digitales Team!</span>
           </p>
+          <p className="text-base sm:text-lg text-white/70 mb-8 max-w-2xl">
+            Professionelle Websites, die Kunden bringen – ohne technisches Wissen, ohne versteckte Kosten, ohne Stress.
+          </p>
+
+          {/* Pain Points */}
+          <div className="flex flex-wrap gap-3 mb-8">
+            {[
+              { icon: <Clock className="h-4 w-4" />, text: 'Keine Zeit? Wir machen alles!' },
+              { icon: <Shield className="h-4 w-4" />, text: 'Fixpreise ab 150 CHF/Monat' },
+              { icon: <Users className="h-4 w-4" />, text: 'Ihr externes Marketing-Team' },
+            ].map((point, index) => (
+              <div 
+                key={index} 
+                className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20"
+              >
+                <span className="text-wave-gold">{point.icon}</span>
+                <span className="text-sm text-white/90">{point.text}</span>
+              </div>
+            ))}
+          </div>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
@@ -97,7 +116,7 @@ export function HeroSection() {
           {/* Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12 pt-8 border-t border-white/20">
             {[
-              { value: '100+', label: 'Projekte' },
+              { value: '100+', label: 'KMU-Projekte' },
               { value: '50+', label: 'Zufriedene Kunden' },
               { value: '5+', label: 'Jahre Erfahrung' },
               { value: '100%', label: 'Schweiz' },
