@@ -12,10 +12,8 @@ import {
   ShoppingBag, 
   TrendingUp, 
   Globe,
-  Sparkles,
   Users,
   Target,
-  Zap,
   Star
 } from 'lucide-react'
 
@@ -39,19 +37,19 @@ const questions: Question[] = [
     question: 'Was ist das Hauptziel Ihrer Website?',
     options: [
       {
-        text: 'Online-Präsenz & Informationen',
+        text: 'Online-Präsenz & Informationen für Kunden',
         icon: <Globe className="w-5 h-5" />,
         scores: { basis: 3, seo: 1, shop: 0 }
       },
       {
-        text: 'Mehr Kunden gewinnen',
+        text: 'Neue Kunden über Google gewinnen',
         icon: <Users className="w-5 h-5" />,
-        scores: { basis: 1, seo: 3, shop: 1 }
+        scores: { basis: 1, seo: 3, shop: 0 }
       },
       {
-        text: 'Produkte online verkaufen',
+        text: 'Produkte direkt online verkaufen',
         icon: <ShoppingBag className="w-5 h-5" />,
-        scores: { basis: 0, seo: 1, shop: 3 }
+        scores: { basis: 0, seo: 0, shop: 3 }
       }
     ]
   },
@@ -61,34 +59,34 @@ const questions: Question[] = [
     options: [
       {
         text: 'Nein, nur eine Informationsseite',
-        scores: { basis: 3, seo: 2, shop: 0 }
+        scores: { basis: 3, seo: 1, shop: 0 }
       },
       {
-        text: 'Vielleicht später',
+        text: 'Vielleicht später möglich',
         scores: { basis: 1, seo: 2, shop: 1 }
       },
       {
-        text: 'Ja, unbedingt!',
+        text: 'Ja, ich möchte Produkte verkaufen!',
         scores: { basis: 0, seo: 0, shop: 3 }
       }
     ]
   },
   {
     id: 3,
-    question: 'Wie wichtig ist SEO (Suchmaschinenoptimierung) für Sie?',
+    question: 'Wie wichtig ist, dass Kunden Sie auf Google finden?',
     options: [
       {
-        text: 'Nicht wichtig',
+        text: 'Nicht wichtig - meine Kunden kennen mich',
         icon: <Target className="w-5 h-5" />,
-        scores: { basis: 2, seo: 0, shop: 1 }
+        scores: { basis: 3, seo: 0, shop: 0 }
       },
       {
-        text: 'Etwas wichtig',
+        text: 'Etwas wichtig - gefunden werden ist gut',
         icon: <TrendingUp className="w-5 h-5" />,
-        scores: { basis: 1, seo: 2, shop: 1 }
+        scores: { basis: 1, seo: 3, shop: 1 }
       },
       {
-        text: 'Sehr wichtig!',
+        text: 'Sehr wichtig - ich brauche neue Kunden!',
         icon: <Star className="w-5 h-5" />,
         scores: { basis: 0, seo: 3, shop: 1 }
       }
@@ -96,57 +94,39 @@ const questions: Question[] = [
   },
   {
     id: 4,
-    question: 'Welche Funktionen benötigen Sie?',
+    question: 'Welche Funktionen sind für Sie wichtig?',
     options: [
       {
-        text: 'Kontaktformular & Grundseiten',
+        text: 'Kontaktformular, Öffnungszeiten, Leistungen',
         scores: { basis: 3, seo: 1, shop: 0 }
       },
       {
-        text: 'Blog & SEO-Tools',
-        scores: { basis: 0, seo: 3, shop: 1 }
+        text: 'Blog, News, Google Ranking verbessern',
+        scores: { basis: 0, seo: 3, shop: 0 }
       },
       {
-        text: 'Produktkatalog & Warenkorb',
+        text: 'Produktkatalog, Warenkorb, Zahlungen',
         scores: { basis: 0, seo: 0, shop: 3 }
       }
     ]
   },
   {
     id: 5,
-    question: 'Wie viele Produkte möchten Sie verkaufen?',
+    question: 'Wie würden Sie Ihr Unternehmen beschreiben?',
     options: [
       {
-        text: 'Keine Produkte',
-        scores: { basis: 3, seo: 2, shop: 0 }
+        text: 'Lokales Geschäft, Handwerker oder Dienstleister',
+        icon: <Globe className="w-5 h-5" />,
+        scores: { basis: 2, seo: 2, shop: 0 }
       },
       {
-        text: '1-10 Produkte',
-        scores: { basis: 0, seo: 1, shop: 2 }
-      },
-      {
-        text: 'Mehr als 10 Produkte',
-        scores: { basis: 0, seo: 0, shop: 3 }
-      }
-    ]
-  },
-  {
-    id: 6,
-    question: 'Welcher Preisrahmen passt zu Ihrem Budget?',
-    options: [
-      {
-        text: 'CHF 150/Monat',
-        icon: <Sparkles className="w-5 h-5" />,
-        scores: { basis: 3, seo: 0, shop: 0 }
-      },
-      {
-        text: 'CHF 199/Monat',
+        text: 'Wachsendes Unternehmen mit Expansionsplänen',
         icon: <TrendingUp className="w-5 h-5" />,
-        scores: { basis: 0, seo: 3, shop: 0 }
+        scores: { basis: 0, seo: 3, shop: 1 }
       },
       {
-        text: 'CHF 279/Monat',
-        icon: <Zap className="w-5 h-5" />,
+        text: 'Online-Shop oder Produktverkauf geplant',
+        icon: <ShoppingBag className="w-5 h-5" />,
         scores: { basis: 0, seo: 0, shop: 3 }
       }
     ]

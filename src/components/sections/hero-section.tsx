@@ -80,7 +80,7 @@ export function HeroSection() {
           <div className="flex flex-wrap gap-3 mb-8">
             {[
               { icon: <Clock className="h-4 w-4" />, text: 'Keine Zeit? Wir machen alles!' },
-              { icon: <Shield className="h-4 w-4" />, text: 'Fixpreise ab 150 CHF/Monat' },
+              { icon: <Shield className="h-4 w-4" />, text: 'Monatlich kündbar' },
               { icon: <Users className="h-4 w-4" />, text: 'Ihr externes Marketing-Team' },
             ].map((point, index) => (
               <div 
